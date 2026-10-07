@@ -4,7 +4,7 @@
 
 - Site: https://natalprofile.com/
 - Bot: https://t.me/natalprofile_bot
-- Languages published: en, ru
+- Languages published: en, ru, es, hi, pt, vi, tr, id, uz, kk, fr, de, it, ar, fa
 - Reports: Natal Chart (Full Analysis), Natal Chart (Basic Analysis), Compatibility Analysis (Full Review), Compatibility Analysis (Basic Review), Career and Financial Analysis, Child's Chart — A guide to your child, Yearly Forecast (Solar Return), Daily Horoscope, Numerology by Name and Birth Date, Vedic Chart (Jyotish)
 - Payment: Telegram Stars, per report, no subscription.
 - The site itself collects no data; its two calculators run in the browser.
