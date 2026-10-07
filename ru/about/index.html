@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ru" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'self'; form-action 'none'">
+<title>О проекте NatalProfile</title>
+<meta name="description" content="Как устроен NatalProfile: что считает программа, что пишет языковая модель и чего сервис не делает.">
+<meta name="robots" content="noindex"><link rel="canonical" href="https://natalprofile.com/ru/about/">
+<link rel="alternate" hreflang="en" href="https://natalprofile.com/about/"><link rel="alternate" hreflang="ru" href="https://natalprofile.com/ru/about/"><link rel="alternate" hreflang="x-default" href="https://natalprofile.com/about/">
+<meta property="og:type" content="website"><meta property="og:site_name" content="NatalProfile">
+<meta property="og:title" content="О проекте NatalProfile"><meta property="og:description" content="Как устроен NatalProfile: что считает программа, что пишет языковая модель и чего сервис не делает.">
+<meta property="og:url" content="https://natalprofile.com/ru/about/"><meta property="og:locale" content="ru_RU">
+<meta property="og:image" content="https://natalprofile.com/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#090a10">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml"><link rel="icon" href="../../favicon.png" sizes="48x48" type="image/png">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png"><link rel="manifest" href="../../manifest.json">
+<link rel="preload" href="../../assets/fonts/inter-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/np.css?v=004deb45">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://natalprofile.com/ru/"}, {"@type": "ListItem", "position": 2, "name": "О проекте", "item": "https://natalprofile.com/ru/about/"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">К содержимому</a>
+<div class="sky" aria-hidden="true"></div><img class="stars" src="../../img/stars.svg" alt="" aria-hidden="true">
+<header class="site-head"><div class="wrap">
+  <a class="logo" href="../../ru/">NATAL•PROFILE</a>
+  <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Меню">☰</button>
+  <nav class="nav" id="nav" aria-label="Меню">
+    <div class="nav-dd"><button type="button" data-dd aria-expanded="false">Отчёты ▾</button>
+      <div class="dd-panel"><a href="../../ru/reports/"><b>Все отчёты</b></a><a href="../../ru/reports/natal-chart/">🔮 Натальная карта (полный анализ)</a><a href="../../ru/reports/natal-chart-without-birth-time/">🌙 Натальная карта (базовый анализ)</a><a href="../../ru/reports/compatibility/">💞 Анализ совместимости (полный разбор)</a><a href="../../ru/reports/compatibility-without-birth-time/">💕 Анализ совместимости (базовый разбор)</a><a href="../../ru/reports/career-and-money/">💼 Карьерный и финансовый анализ</a><a href="../../ru/reports/child-chart/">👶 Детская карта — инструкция к вашему ребёнку</a><a href="../../ru/reports/year-ahead/">🌞 Годовой прогноз (соляр)</a><a href="../../ru/reports/daily-horoscope/">✨ Гороскоп на сегодня</a><a href="../../ru/reports/numerology/">🔢 Нумерология по имени и дате рождения</a><a href="../../ru/reports/vedic-chart/">🕉 Ведическая карта (джйотиш)</a></div></div>
+    <a href="../../ru/#tools">Калькуляторы</a>
+    <a href="../../ru/glossary/">Словарь</a>
+    <a href="../../ru/faq/">Вопросы</a>
+    <a href="../../ru/about/">О проекте</a>
+  </nav>
+  <div class="lang"><button type="button" data-dd aria-expanded="false" aria-label="Язык">RU ▾</button>
+    <div class="dd-panel"><a href="../../about/" lang="en" hreflang="en">English</a><a href="../../ru/about/" lang="ru" hreflang="ru" aria-current="true">Русский</a></div></div>
+  <a class="btn btn-primary head-cta" href="https://t.me/natalprofile_bot" target="_blank" rel="noopener">Открыть бот</a>
+</div></header>
+<main id="main">
+<div class="wrap"><nav class="crumbs" aria-label="breadcrumbs"><a href="../../ru/">Главная</a> › <span>О проекте</span></nav><div class="page-head"><h1>О проекте</h1></div><div class="prose"><h2>Что это</h2><p>NatalProfile — бот в Telegram, который по данным рождения составляет личный отчёт в PDF. Есть три направления: западная астрология, ведическая карта (джйотиш) и нумерология.</p><h2>Как считаются отчёты</h2><ul><li>Положения планет, дома и аспекты рассчитываются программой по швейцарским эфемеридам (Swiss Ephemeris).</li><li>Ведическая карта считается в сидерическом зодиаке с аянамшей Лахири и домами по системе Whole Sign.</li><li>Нумерология считается по системе Пифагора: цифры даты и буквы имени.</li><li>Текст отчёта составляет языковая модель строго по готовым расчётам. В годовом прогнозе и прогнозе на день даты и периоды определяет программа, а не модель.</li></ul><h2>Чего мы не делаем</h2><ul><li>Не предсказываем события: в прогнозах — темы и периоды, а не «что случится».</li><li>Не даём медицинских, финансовых и юридических советов.</li><li>Не продаём подписку: каждый отчёт оплачивается отдельно.</li></ul><h2>Связь</h2><p>Вопросы по отчётам и оплате — в поддержку в Telegram.</p><p><a href="https://t.me/NatalProfileSupport" target="_blank" rel="noopener">@NatalProfileSupport</a> · <a href="https://t.me/natalprofile_bot" target="_blank" rel="noopener">@natalprofile_bot</a></p></div></div><section class="section closing"><div class="wrap"><h2>Начните с бесплатной главы</h2><div class="cta-row"><a class="btn btn-primary" href="https://t.me/natalprofile_bot" target="_blank" rel="noopener">🎁 Первая глава бесплатно</a></div></div></section>
+</main>
+<footer class="site-foot"><div class="wrap">
+  <div class="foot-grid">
+    <div><div class="foot-h">NATAL•PROFILE</div><p>Личные астрологические и нумерологические отчёты в Telegram.</p>
+      <button class="install-btn" type="button" hidden>Установить как приложение</button></div>
+    <div><div class="foot-h">Отчёты</div><ul><li><a href="../../ru/reports/natal-chart/">Натальная карта (полный анализ)</a></li><li><a href="../../ru/reports/natal-chart-without-birth-time/">Натальная карта (базовый анализ)</a></li><li><a href="../../ru/reports/compatibility/">Анализ совместимости (полный разбор)</a></li><li><a href="../../ru/reports/compatibility-without-birth-time/">Анализ совместимости (базовый разбор)</a></li><li><a href="../../ru/reports/career-and-money/">Карьерный и финансовый анализ</a></li><li><a href="../../ru/reports/child-chart/">Детская карта — инструкция к вашему ребёнку</a></li><li><a href="../../ru/reports/">Все отчёты</a></li></ul></div>
+    <div><div class="foot-h">Сайт</div><ul>
+      <li><a href="../../ru/">Главная</a></li><li><a href="../../ru/glossary/">Словарь</a></li>
+      <li><a href="../../ru/faq/">Вопросы</a></li><li><a href="../../ru/about/">О проекте</a></li></ul></div>
+    <div><div class="foot-h">Документы</div><ul>
+      <li><a href="../../ru/terms/">Условия сервиса</a></li><li><a href="../../ru/privacy/">Конфиденциальность</a></li>
+      <li><a href="https://t.me/NatalProfileSupport" target="_blank" rel="noopener">Поддержка</a></li></ul></div>
+  </div>
+  <p class="legal-note">NatalProfile — материал для самопознания и развлечения. Это не медицинская, финансовая или юридическая консультация и не предсказание будущего.<br>© 2026 NatalProfile</p>
+</div></footer>
+<div class="sticky-cta"><a class="btn btn-primary" href="https://t.me/natalprofile_bot" target="_blank" rel="noopener">🎁 Первая глава бесплатно</a></div>
+<script src="../../assets/np.js?v=004deb45" defer></script>
+<script src="../../assets/np-fx.js?v=004deb45" defer></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+/* SITE */
+Name: NatalProfile
+URL: https://natalprofile.com/
+Languages: en, ru
+Standards: HTML5, CSS3, vanilla JS, no third-party requests
+Last build: 2026-10-08

@@ -1,0 +1,4 @@
+# NatalProfile — AI usage note
+User-agent: *
+Allow: /
+# Content may be quoted with a link to https://natalprofile.com/
