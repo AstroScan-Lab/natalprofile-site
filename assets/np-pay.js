@@ -22,7 +22,8 @@
       btn.disabled = true; status.textContent = T.wait; status.classList.remove('bad');
       fetch(box.getAttribute('data-api') + '/api/site/pay', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ product: box.getAttribute('data-product'), lang: box.getAttribute('data-lang'), test: testKey || undefined })
+        body: JSON.stringify({ product: box.getAttribute('data-product'), lang: box.getAttribute('data-lang'), test: testKey || undefined,
+                               email: (box.querySelector('[data-pay-email]') || {}).value || undefined })
       }).then(function (r) { return r.json(); }).then(function (d) {
         if (d.url) { window.location.href = d.url; return; }
         btn.disabled = false; status.classList.add('bad');
@@ -44,6 +45,12 @@
         .then(function (d) {
           if (d.status === 'paid' && d.link) {
             show(P.paidH, P.paidP);
+            /* say plainly what the money was for: the bank notice shows only the shop name */
+            var what = paid.querySelector('.paid-what');
+            if (what && d.product) {
+              what.textContent = P.what.replace('{product}', P.products[d.product] || d.product).replace('{sum}', d.amount != null ? String(d.amount).replace(/\.0+$/, '') : '');
+              what.hidden = false;
+            }
             link.href = d.link; link.hidden = false;
             paid.querySelector('.paid-keep').hidden = false;
           } else if (d.status === 'canceled') { show(P.cancelH, P.cancelP); paid.querySelector('.paid-back').hidden = false; }
