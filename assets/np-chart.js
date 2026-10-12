@@ -90,6 +90,8 @@
           } else { val.textContent = T.noAsc; val.className = 'ch-muted'; }
           li.appendChild(label); li.appendChild(val); three.appendChild(li);
         });
+        /* without a birth time there is no Ascendant: say so instead of promising three signs */
+        after.querySelector('p').textContent = d.asc ? T.after : T.afterNoTime;
         three.hidden = false; after.hidden = false;
         say(typeof d.left === 'number' ? T.left.replace('{n}', d.left) : '');
         if (window.matchMedia && window.matchMedia('(max-width: 960px)').matches) box.querySelector('.ch-result').scrollIntoView({ behavior: 'smooth', block: 'start' });
