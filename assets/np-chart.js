@@ -13,6 +13,7 @@
   var status = box.querySelector('.ch-status'), button = form.querySelector('button[type="submit"]');
   var img = box.querySelector('#ch-img'), placeholder = box.querySelector('.ch-placeholder');
   var three = box.querySelector('.ch-three'), after = box.querySelector('.ch-after');
+  var tableBox = box.querySelector('.ch-table');
   var city = null, timer = 0, seq = 0;
 
   function say(text, bad) { status.textContent = text || ''; status.classList.toggle('bad', !!bad); }
@@ -93,6 +94,25 @@
         /* without a birth time there is no Ascendant: say so instead of promising three signs */
         after.querySelector('p').textContent = d.asc ? T.after : T.afterNoTime;
         three.hidden = false; after.hidden = false;
+        /* positions table: sign, degree and house of every point (an older server sends no table: keep it hidden) */
+        if (tableBox && d.table && d.table.length) {
+          var tbl = tableBox.querySelector('table');
+          tbl.textContent = '';
+          var head = tbl.createTHead().insertRow();
+          T.th.forEach(function (h) { var th = document.createElement('th'); th.scope = 'col'; th.textContent = h; head.appendChild(th); });
+          var body = tbl.createTBody();
+          d.table.forEach(function (r) {
+            var tr = body.insertRow(), i = T.keys.indexOf(r.sign);
+            var name = document.createElement('th'); name.scope = 'row'; name.textContent = T.rows[r.key] || r.key;
+            if (r.retro) { var rt = document.createElement('small'); rt.textContent = ' ' + T.retro; name.appendChild(rt); }
+            tr.appendChild(name);
+            var sign = tr.insertCell();
+            if (i >= 0) { var g = document.createElement('span'); g.className = 'sky-gl'; g.textContent = T.glyphs[i] + '\uFE0E'; sign.appendChild(g); sign.appendChild(document.createTextNode(T.signs[i])); }
+            tr.insertCell().textContent = r.deg;
+            tr.insertCell().textContent = r.house || '—';
+          });
+          tableBox.hidden = false;
+        } else if (tableBox) { tableBox.hidden = true; }
         say(typeof d.left === 'number' ? T.left.replace('{n}', d.left) : '');
         if (window.matchMedia && window.matchMedia('(max-width: 960px)').matches) box.querySelector('.ch-result').scrollIntoView({ behavior: 'smooth', block: 'start' });
       })
