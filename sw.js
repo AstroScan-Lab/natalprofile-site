@@ -1,6 +1,6 @@
 /* NatalProfile service worker — offline shell + PWA install. Cache name changes with every asset change. */
-const CACHE = 'np-11c04dee';
-const PRECACHE = ["./", "./404.html", "./manifest.json", "./favicon.png", "./assets/np.css?v=11c04dee", "./assets/np.js?v=11c04dee", "./assets/np-fx.js?v=11c04dee", "./assets/fonts/inter-latin.woff2", "./img/stars.svg"];
+const CACHE = 'np-82dd736a';
+const PRECACHE = ["./", "./404.html", "./manifest.json", "./favicon.png", "./assets/np.css?v=82dd736a", "./assets/np.js?v=82dd736a", "./assets/np-fx.js?v=82dd736a", "./assets/fonts/inter-latin.woff2", "./img/stars.svg"];
 self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(PRECACHE)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
 self.addEventListener('fetch', e => {

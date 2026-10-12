@@ -579,3 +579,15 @@ html{overflow-x:clip}.hero-art{overflow:clip;overflow-clip-margin:40px}
   .mc h2{margin:44px 0 14px}.mc-more{display:block;margin:6px 0 0}.mc .hv-sky{padding:26px 0 0}.mc .hv-sky>.wrap{margin-inline:16px}
 }
 .nav a,.nav-dd>button,.head-cta{white-space:nowrap}
+/* card payment */
+.pay-box{margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+.pay-or{margin:0 0 10px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-align:center}
+.pay-box .btn{width:100%;margin-top:0}
+.pay-status{min-height:22px;margin:10px 0 0;font-size:14.5px;color:var(--body)}
+.pay-status.bad{color:#ffb4a8}
+.hv-rub{display:block;margin-top:2px!important;margin-bottom:0!important}
+.paid{max-width:720px;padding:70px 0 40px}
+.paid h1{margin-bottom:18px}
+.paid .btn{margin:14px 0 6px}
+.paid-keep{font-size:15px;color:var(--body);max-width:560px}
+.aside-card .pay-box .btn{margin-top:0}
