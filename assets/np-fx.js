@@ -6,10 +6,10 @@
   'use strict';
   var mq = window.matchMedia;
   var reduce = mq && mq('(prefers-reduced-motion: reduce)').matches;
-  var light = mq && mq('(prefers-color-scheme: light)').matches;
+  var root = document.documentElement;
+  var light = mq && mq('(prefers-color-scheme: light)').matches && !root.hasAttribute('data-night'); /* night pages ignore the system theme */
   var fine = mq && mq('(pointer: fine)').matches;
   var phone = mq && mq('(max-width: 760px)').matches;
-  var root = document.documentElement;
 
   /* ---- count-up for the figures in the stats row (works in both themes) ---- */
   if (!reduce && 'IntersectionObserver' in window) {
@@ -36,7 +36,7 @@
 
   /* ---- scroll reveal: mark blocks below the first screen, show each once ---- */
   if ('IntersectionObserver' in window) {
-    var blocks = document.querySelectorAll('.section .wrap > h2, .section .wrap > .sub, .section .grid > *, .tools > *, .carousel, blockquote, .chapters li');
+    var blocks = document.querySelectorAll('.section .wrap > h2, .section .wrap > .sub, .section .grid > *, .tools > *, .carousel, blockquote, .chapters li, .hv-r');
     var vh = window.innerHeight;
     var io2 = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io2.unobserve(en.target); } });
