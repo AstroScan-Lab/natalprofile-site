@@ -43,6 +43,7 @@
 html{scroll-behavior:smooth;background:var(--bg);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 body{margin:0;background:transparent;color:var(--body);font:17px/1.65 var(--font);-webkit-text-size-adjust:100%;overflow-x:hidden}
 img{max-width:100%;height:auto;display:block}
+[hidden]{display:none!important}
 a{color:var(--gold-2)}a:hover{color:var(--gold)}
 h1,h2,h3{color:var(--text);line-height:1.18;margin:0}
 p{margin:0 0 1em}
