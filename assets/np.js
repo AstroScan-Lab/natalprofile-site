@@ -1,4 +1,5 @@
-/* NatalProfile — site behaviour. No third-party requests, nothing is stored or sent anywhere. */
+/* NatalProfile — site behaviour (menu, the two in-browser calculators, PWA). This file sends nothing anywhere:
+   the chart calculation and card payment talk to our server from np-chart.js and np-pay.js. */
 (function () {
   'use strict';
 

@@ -1,0 +1,4 @@
+Contact: https://t.me/NatalProfileSupport
+Expires: 2027-10-28T00:00:00Z
+Preferred-Languages: ru, en
+Canonical: https://natalprofile.com/.well-known/security.txt
