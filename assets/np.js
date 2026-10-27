@@ -81,7 +81,8 @@
     });
   }
 
-  /* tool 2 — Life Path number: digits of DDMMYYYY summed and reduced, 11/22/33 kept (same arithmetic as the bot) */
+  /* tool 2 — Life Path number: day, month and year reduced separately, then summed and reduced, 11/22/33 kept
+     (same arithmetic as the bot, numerology.py) */
   function reduce(n) {
     while (n > 9 && n !== 11 && n !== 22 && n !== 33) {
       n = String(n).split('').reduce(function (a, d) { return a + (+d); }, 0);
@@ -95,15 +96,16 @@
     lIn.addEventListener('input', function () {
       var p = lIn.value.split('-');
       if (p.length !== 3 || p[0].length !== 4 || !+p[1] || !+p[2]) { lOut.hidden = true; return; }
-      var digits = (p[2] + p[1] + p[0]).split('');
-      var sum = digits.reduce(function (a, d) { return a + (+d); }, 0);
+      var parts = [+p[2], +p[1], +p[0]].map(function (v) { return [v, reduce(v)]; });
+      var sum = parts.reduce(function (a, x) { return a + x[1]; }, 0);
       var n = reduce(sum);
       lOut.hidden = false;
       lOut.innerHTML = '';
       var b = document.createElement('b');
       b.textContent = lData.label + ': ' + n;
       var how = document.createElement('small');
-      how.textContent = digits.join(' + ') + ' = ' + sum + (sum !== n ? ' → ' + n : '');
+      how.textContent = parts.map(function (x) { return x[0] !== x[1] ? x[0] + '→' + x[1] : String(x[1]); }).join(' + ')
+        + ' = ' + sum + (sum !== n ? ' → ' + n : '');
       lOut.appendChild(b); lOut.appendChild(how);
       if (n > 9) { var m = document.createElement('small'); m.textContent = lData.master; lOut.appendChild(m); }
     });
