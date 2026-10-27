@@ -595,4 +595,18 @@ html{overflow-x:clip}.hero-art{overflow:clip;overflow-clip-margin:40px}
 .pay-mail{display:block;margin:0 0 10px}
 .pay-mail span{display:block;font-size:13.5px;color:var(--muted);margin-bottom:6px}
 .pay-mail input{width:100%;min-height:46px;font:inherit;font-size:16px;padding:10px 14px;border-radius:12px;border:1px solid var(--line-hi);background:rgba(255,255,255,.04);color:var(--text)}
+/* form with the report details before paying by card */
+.pf{margin-top:4px;text-align:start}
+.pf h3{margin:4px 0 2px;font-size:18px}
+.pf .pf-f{display:block;margin:12px 0 0}
+.pf .pf-f>span{display:block;font-size:13.5px;color:var(--muted);margin-bottom:6px}
+.pf label.pf-f,.pf .ch-row label{margin:12px 0 0}
+.pf .ch-row{gap:10px}
+.pf select{width:100%;min-height:50px;font:inherit;font-size:16px;padding:12px 14px;border-radius:12px;border:1px solid var(--line-hi);background:var(--bg-2);color:var(--text);color-scheme:dark}
+.pf-p{margin:16px 0 0;padding:4px 14px 14px;border:1px solid var(--line);border-radius:14px}
+.pf-p legend{padding:0 6px;font-size:14px;color:var(--gold)}
+.pf .pay-mail{margin:14px 0 0}
+.pf .pf-consent{align-items:flex-start;font-size:14px;line-height:1.45;margin-top:12px}
+.pf .pf-consent input{flex:none;margin-top:2px}
+.pay-box .pf .btn{margin-top:16px}
 .paid-what{display:inline-block;margin:0 0 16px;padding:10px 16px;border:1px solid var(--line-hi);border-radius:12px;background:var(--surface-glass-base);color:var(--text);font-weight:600}
