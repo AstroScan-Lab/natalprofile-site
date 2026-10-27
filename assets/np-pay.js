@@ -68,15 +68,22 @@
     document.addEventListener('click', function (e) { if (!wrap.contains(e.target)) close(); });
   }
 
+  /* the owner's /stats in the bot: only "event + report", no cookies, nothing about the visitor */
+  function count(api, event, product) {
+    try { if (navigator.sendBeacon) navigator.sendBeacon(api + '/api/site/event', JSON.stringify({ e: event, p: product })); } catch (e) {}
+  }
+
   Array.prototype.forEach.call(document.querySelectorAll('[data-pay]'), function (box) {
     var T = JSON.parse(box.getAttribute('data-i18n'));
     var api = box.getAttribute('data-api'), lang = box.getAttribute('data-lang');
+    count(api, 'report_view', box.getAttribute('data-product'));
     var open = box.querySelector('[data-pay-open]'), form = box.querySelector('form'), status = form.querySelector('.pay-status');
     var submit = form.querySelector('button[type="submit"]'), cities = {};
     function say(text, bad) { status.textContent = text || ''; status.classList.toggle('bad', !!bad); }
 
     open.addEventListener('click', function () {
       form.hidden = false; open.hidden = true; open.setAttribute('aria-expanded', 'true');
+      count(api, 'pay_open', box.getAttribute('data-product'));
       var first = form.querySelector('input, select'); if (first) first.focus();
     });
     Array.prototype.forEach.call(form.querySelectorAll('[data-city]'), function (wrap) {
