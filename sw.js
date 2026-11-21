@@ -1,8 +1,8 @@
 /* NatalProfile service worker — offline shell + PWA install. Cache name changes with every asset change.
    Only complete answers (200, same site) are kept: no error pages, no partial (206) answers; at most MAX_PAGES
    visited pages, the oldest go first (the site has ~6000 pages). */
-const CACHE = 'np-b52e13c1';
-const PRECACHE = ["./", "./404.html", "./manifest.json", "./favicon.png", "./assets/np.css?v=b52e13c1", "./assets/np.js?v=b52e13c1", "./assets/np-fx.js?v=b52e13c1", "./assets/fonts/inter-latin.woff2", "./img/stars.svg"];
+const CACHE = 'np-ae42d447';
+const PRECACHE = ["./", "./404.html", "./manifest.json", "./favicon.png", "./assets/np.css?v=ae42d447", "./assets/np.js?v=ae42d447", "./assets/np-fx.js?v=ae42d447", "./assets/fonts/inter-latin.woff2", "./img/stars.svg"];
 const MAX_PAGES = 100;
 self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(PRECACHE)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())); });

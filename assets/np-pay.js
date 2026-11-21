@@ -1,4 +1,4 @@
-/* NatalProfile — paying for a report by card on the site (YooKassa). The bot is not involved:
+/* NatalProfile — paying for a report by card on the site (YooKassa on the Russian pages, Robokassa on the others). The bot is not involved:
    in Telegram digital goods are sold for Stars only, so a report paid by card is delivered here.
    1) Report page: "Pay by card" opens a form with the details the report needs (the same fields as in
       the bot's Mini App). The server checks them, creates a payment and we go to YooKassa's page.
@@ -77,6 +77,13 @@
     var T = JSON.parse(box.getAttribute('data-i18n'));
     var api = box.getAttribute('data-api'), lang = box.getAttribute('data-lang');
     count(api, 'report_view', box.getAttribute('data-product'));
+    /* non-Russian pages (Robokassa): the box appears only when the server says card payment is switched on */
+    if (box.hasAttribute('data-pay-gate')) {
+      fetch(api + '/api/site/pay/methods?lang=' + encodeURIComponent(lang))
+        .then(function (r) { return r.json(); })
+        .then(function (d) { if (d && d.card) box.hidden = false; })
+        .catch(function () {});
+    }
     var open = box.querySelector('[data-pay-open]'), form = box.querySelector('form'), status = form.querySelector('.pay-status');
     var submit = form.querySelector('button[type="submit"]'), cities = {};
     function say(text, bad) { status.textContent = text || ''; status.classList.toggle('bad', !!bad); }
